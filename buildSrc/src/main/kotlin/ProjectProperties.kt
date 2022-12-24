@@ -27,7 +27,9 @@ object ProjectProperties {
 
     private const val version = "1.0.0"
 
-    val remoteBuild = System.getProperty(Env.KEY_CI_BUILD).toBoolean()
+    fun remoteBuild(): Boolean {
+        return System.getProperty(Env.KEY_CI_BUILD).toBoolean()
+    }
 
     object Env {
         const val KEY_CI_BUILD = "CI_BUILD"
